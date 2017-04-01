@@ -16,6 +16,6 @@ public class KeywordsToTweetsReducer extends Reducer<Text, Text, Text, Text> {
         for (Text value : values){
             output += value.toString() + ", ";
         }
-        context.write(key, new IntWritable(output.substring(0, output.length()-2)));
+        context.write(key, new Text(output.substring(0, output.length()-2)));
     }
 }
