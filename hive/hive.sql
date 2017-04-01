@@ -34,6 +34,8 @@ JOIN schools sch
 ON (stu.school_id = sch.school_id)
 WHERE sch.city = "Ponce" OR sch.city = "Cabo Rojo"
 
-SELECt region, district, COUNT(*)
-FROM students
-GROUP BY region, district;
+SELECT stu.region, sch.city, COUNT(*)
+FROM students stu
+JOIN schools sch
+ON (stu.school_id = sch.school_id)
+GROUP BY stu.region, sch.city;
