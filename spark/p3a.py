@@ -4,7 +4,7 @@ from pyspark import SparkConf
 conf = SparkConf().setMaster("local").setAppName("Exam 1 - Part A")
 sc = SparkContext(conf = conf)
 
-studentsRdd = sc.textFile ("file:///studentsPR.csv")
+studentsRdd = sc.textFile ("studentsPR.csv")
 
 students = studentsRdd.map(lambda line: line.split(','))
 
